@@ -8,7 +8,6 @@ import styles from './Regions.scss';
 import {Grid, Row} from 'react-flexbox-grid';
 
 const Regions = ({regions, subregions, countries}) => (
-
   <Section>
     <Grid>
       <PageTitle text='All regions' />

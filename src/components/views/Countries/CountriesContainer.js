@@ -2,7 +2,7 @@ import {connect} from 'react-redux';
 import Countries from './Countries';
 import {getAllCountries} from '../../../redux/countriesRedux';
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   countries: getAllCountries(state),
 });
 
