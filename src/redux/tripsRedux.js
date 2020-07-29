@@ -24,9 +24,10 @@ export const getFilteredTrips = ({trips, filters}) => {
     const pattern = new RegExp(filters.tags, 'i');
     output = output.filter(trip => pattern.test(trip.tags));
   }
-
+  console.log('trips: ', trips);
+  console.log('filters: ', filters);
   // TODO - sort by cost descending (most expensive goes first)
-  
+
 
   return output;
 };
