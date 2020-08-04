@@ -8,9 +8,16 @@ const dateToStr = function(dateObj){
   return dateObj.toISOString().slice(0, 10);
 };
 
-const OrderOptionDate = ({setOptionValue}) => {
-  const [startDate, setStartDate] = useState(new Date());
+function addDays(date, days) {
+  const tomorrow = new Date(date);
+  tomorrow.setDate(tomorrow.getDate() + days);
+  return tomorrow;
+}
 
+const OrderOptionDate = ({setOptionValue}) => {
+  const tomorrow = addDays(new Date(),1);
+  
+  const [startDate, setStartDate] = useState(tomorrow);
   const handleChange = (date) => {
     setStartDate(date);
     setOptionValue(dateToStr(date));
@@ -18,12 +25,13 @@ const OrderOptionDate = ({setOptionValue}) => {
 
   return (
     <DatePicker 
+
+      startDate={startDate}
       className={styles.date} 
       selected={startDate} 
-      //onChange={date => setStartDate(date)}
-      onChange={date => handleChange(date)}
- 
+      onChange={date => handleChange(date)} 
       dateFormat={'dd/MM/yyyy'}
+      minDate={tomorrow}
     />
   );
 };
