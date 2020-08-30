@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import styles from './OrderOption.scss';
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 
-const dateToStr = function(dateObj){
-  return dateObj.toISOString().slice(0, 10);
-};
+//const dateToStr = function(dateObj){
+//  return dateObj.toISOString().slice(0, 10);
+//};
 
 function addDays(date, days) {
   const tomorrow = new Date(date);
@@ -20,7 +20,7 @@ const OrderOptionDate = ({setOptionValue}) => {
   const [startDate, setStartDate] = useState(tomorrow);
   const handleChange = (date) => {
     setStartDate(date);
-    setOptionValue(dateToStr(date));
+    setOptionValue(date);
   };
 
   return (
