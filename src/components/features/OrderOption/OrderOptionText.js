@@ -6,7 +6,7 @@ const OrderOptionText = ({setOptionValue}) => (
   <input 
     className={styles.text} 
     type='text' 
-    onChange={event => setOptionValue(event.currentTarget.value)} 
+    onChange={event => setOptionValue(event.currentTarget.value)}
   />
 );
 
